@@ -1,0 +1,12 @@
+%{"apex": {:hex, :apex, "0.3.1"},
+  "cowboy": {:hex, :cowboy, "1.0.0"},
+  "cowlib": {:hex, :cowlib, "1.0.0"},
+  "eredis": {:git, "git://github.com/wooga/eredis.git", "471dd471060daa1d98391cb69ae006f8ba79a042", [ref: "471dd"]},
+  "exredis": {:git, "git://github.com/artemeff/exredis.git", "321487f1e747225ff86c5d8af7bb7f3b7a7901d6", [tag: "0.1.0"]},
+  "linguist": {:hex, :linguist, "0.1.2"},
+  "phoenix": {:hex, :phoenix, "0.4.1"},
+  "plug": {:hex, :plug, "0.7.0"},
+  "poison": {:hex, :poison, "1.1.1"},
+  "ranch": {:hex, :ranch, "1.0.0"},
+  "redis": {:git, "git://github.com/timbuchwaldt/elixir-redis.git", "dc2dbec61b603dee3fcb890352bdebd3a16ce758", [tag: '1.2.0']},
+  "timex": {:hex, :timex, "0.12.9"}}
