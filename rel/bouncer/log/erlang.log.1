@@ -1,0 +1,19 @@
+
+=====
+===== LOGGING STARTED Mon Oct 13 12:05:50 PDT 2014
+=====
+Exec: /Users/russ/Desktop/bouncer/rel/bouncer/erts-6.2/bin/erlexec -boot /Users/russ/Desktop/bouncer/rel/bouncer/releases/0.0.1/bouncer -env ERL_LIBS /Users/russ/Desktop/bouncer/rel/bouncer/lib -config /Users/russ/Desktop/bouncer/rel/bouncer/releases/0.0.1/sys.config -pa /Users/russ/Desktop/bouncer/rel/bouncer/lib/consolidated -args_file /Users/russ/Desktop/bouncer/rel/bouncer/releases/0.0.1/vm.args -user Elixir.IEx.CLI -extra --no-halt +iex -- console
+Root: /Users/russ/Desktop/bouncer/rel/bouncer
+/Users/russ/Desktop/bouncer/rel/bouncer
+Erlang/OTP 17 [erts-6.2] [source] [64-bit] [smp:8:8] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+
+Running Bouncer.Router with Cowboy on port 4000
+Interactive Elixir (1.0.0) - press Ctrl+C to exit (type h() ENTER for help)
+iex(bouncer@127.0.0.1)1> 
+12:06:09.080 request_id=xSxL+68cLZbFZYwINzSR [info]  GET /track/MjQ0Mjk6MjoxMzg
+
+12:06:09.113 request_id=xSxL+68cLZbFZYwINzSR [info]  Sent 302 in 32ms
+
+12:06:09.117 [error] Error in process <0.207.0> on node 'bouncer@127.0.0.1' with exit value: {undef,[{'Elixir.Exredis',start_using_connection_string,[<<22 bytes>>],[]},{'Elixir.Bouncer.Event',store,1,[{file,"web/models/event.ex"},{line,12}]}]}
+
+

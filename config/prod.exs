@@ -21,3 +21,4 @@ config :logger, :console,
   level: :info,
   metadata: [:request_id]
 
+config: :bugsnag, api_key: "2c178f8365b14fb6f9fe091491cc4b33"

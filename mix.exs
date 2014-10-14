@@ -26,9 +26,13 @@ defmodule Bouncer.Mixfile do
     [
       {:phoenix, "0.4.1"},
       {:cowboy, "~> 1.0.0"},
+      {:exrm, "~> 0.14.3"},
       {:apex, "~>0.3.0"},
       {:exredis, github: "artemeff/exredis", tag: "0.1.0"},
-      {:timex, "~> 0.12.9"}
+      {:timex, "~> 0.12.9"},
+      {:earmark, ">= 0.0.0"},
+      {:ex_doc, github: "elixir-lang/ex_doc"}
+      # {:bugsnag, "~> 0.0.1" }
     ]
   end
 end
