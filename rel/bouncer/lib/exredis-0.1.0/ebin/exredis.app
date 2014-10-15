@@ -1,0 +1,10 @@
+{application,exredis,
+             [{registered,[]},
+              {description,"Redis client for Elixir"},
+              {vsn,"0.1.0"},
+              {modules,['Elixir.Exredis','Elixir.Exredis.Api',
+                        'Elixir.Exredis.Api.Helper',
+                        'Elixir.Exredis.ConnectionString',
+                        'Elixir.Exredis.ConnectionString.Config',
+                        'Elixir.Exredis.Script','Elixir.Exredis.Sub']},
+              {applications,[kernel,stdlib,elixir]}]}.

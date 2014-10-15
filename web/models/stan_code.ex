@@ -3,7 +3,7 @@ defmodule Bouncer.StanCode do
     Module to encode/decode/inspect stan codes.
   """
 
-  defstruct encoded: true, code: "",
+  defstruct invalid: false, encoded: true, code: "",
             site: "0", program: "0", campaign: "0",
             username: "", tour: "", sub_id_1: "", sub_id_2: "", ad_id: ""
 
@@ -60,35 +60,43 @@ defmodule Bouncer.StanCode do
              |> :base64.decode
              |> String.split(":")
 
-    %Bouncer.StanCode{
-      encoded: true,
-      code: string,
-      campaign: Enum.at(result, 0),
-      program: Enum.at(result, 1),
-      site: Enum.at(result, 2),
-    }
+    if length(result) == 3 do
+      %Bouncer.StanCode{
+        encoded: true,
+        code: string,
+        campaign: Enum.at(result, 0),
+        program: Enum.at(result, 1),
+        site: Enum.at(result, 2),
+      }
+    else
+      %Bouncer.StanCode{ invalid: true }
+    end
   end
 
   defp decode_unencoded_code(string) do
     result = String.split(string, ":")
 
-    if String.contains?(Enum.at(result, 0), ";") do
-      split = Enum.at(result, 0) |> String.split(";")
-      username = Enum.at(split, 0)
-      campaign = Enum.at(split, 1)
-    else
-      username = Enum.at(result, 0)
-      campaign = ""
-    end
+    if length(result) == 3 do
+      if String.contains?(Enum.at(result, 0), ";") do
+        split = Enum.at(result, 0) |> String.split(";")
+        username = Enum.at(split, 0)
+        campaign = Enum.at(split, 1)
+      else
+        username = Enum.at(result, 0)
+        campaign = ""
+      end
 
-    %Bouncer.StanCode{
-      encoded: false,
-      code: string,
-      username: Enum.at(result, 0),
-      campaign: campaign,
-      program: Enum.at(result, 1),
-      site: Enum.at(result, 2)
-    }
+      %Bouncer.StanCode{
+        encoded: false,
+        code: string,
+        username: Enum.at(result, 0),
+        campaign: campaign,
+        program: Enum.at(result, 1),
+        site: Enum.at(result, 2)
+      }
+    else
+      %Bouncer.StanCode{ invalid: true }
+    end
   end
 
   defp fix_encoded_code(string) do

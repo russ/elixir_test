@@ -14,11 +14,9 @@ config :phoenix, Bouncer.Router,
   ssl: false,
   host: "example.com",
   cookies: true,
-  session_key: "_bouncer_key",
+  session_key: "_stan_key",
   session_secret: "Z!PVL@&X_9$^2I5IU*!M2^(S(QY@U2ZE!I=LC0C7*@6=FDD(EW)VYCEJYF12)M3D856OXXRQ"
 
 config :logger, :console,
   level: :info,
   metadata: [:request_id]
-
-config: :bugsnag, api_key: "2c178f8365b14fb6f9fe091491cc4b33"

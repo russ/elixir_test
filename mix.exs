@@ -13,7 +13,7 @@ defmodule Bouncer.Mixfile do
   def application do
     [
       mod: { Bouncer, [] },
-      applications: [:phoenix, :cowboy, :logger]
+      applications: [:phoenix, :cowboy, :logger, :eredis, :exredis]
     ]
   end
 
@@ -28,10 +28,11 @@ defmodule Bouncer.Mixfile do
       {:cowboy, "~> 1.0.0"},
       {:exrm, "~> 0.14.3"},
       {:apex, "~>0.3.0"},
-      {:exredis, github: "artemeff/exredis", tag: "0.1.0"},
+      {:exredis, github: "artemeff/exredis"},
       {:timex, "~> 0.12.9"},
       {:earmark, ">= 0.0.0"},
-      {:ex_doc, github: "elixir-lang/ex_doc"}
+      {:ex_doc, github: "elixir-lang/ex_doc"},
+      {:jsex, "~> 2.0.0"},
       # {:bugsnag, "~> 0.0.1" }
     ]
   end

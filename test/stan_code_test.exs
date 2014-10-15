@@ -13,6 +13,16 @@ defmodule Bouncer.StanCodeTest do use ExUnit.Case
     ad_id: "1"
   }
 
+  test "an invalid code" do
+    result = Bouncer.StanCode.decode("NOSUCHCODE")
+    assert result.invalid == true
+  end
+
+  test "a valid code" do
+    result = Bouncer.StanCode.decode("MjQ0Mjk6OTQ6MTA")
+    assert result.invalid == false
+  end
+
   test "decoding a encoded code" do
     result = Bouncer.StanCode.decode("MjQ0Mjk6OTQ6MTA")
     assert result.campaign == "24429"
@@ -37,11 +47,6 @@ defmodule Bouncer.StanCodeTest do use ExUnit.Case
 
     result = Bouncer.StanCode.decode("MjQ0Mjk6OTQ6MTA,16,4,3,2")
     assert result.ad_id == "2"
-  end
-
-  test "an invalid code" do
-    result = Bouncer.StanCode.decode("NOSUCHCODE")
-    assert result.code == "NOSUCHCODE"
   end
 
   test "decoding a unencoded code" do
